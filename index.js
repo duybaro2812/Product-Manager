@@ -1,5 +1,5 @@
 const express = require('express');
-const route = require("./routes/index.route")
+const route = require("./routes/client/index.route")
 const app = express();
 const port = 3000;
 
