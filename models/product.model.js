@@ -12,3 +12,10 @@ const productSchema = new mongoose.Schema({
     position: Number,
     deleted: Boolean
 });
+
+const Product = mongoose.model('Product', productSchema, "products");
+
+module.exports = Product;
+
+const small = new Product({size: 'small'});
+await small.save();
