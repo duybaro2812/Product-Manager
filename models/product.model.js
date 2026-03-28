@@ -16,6 +16,3 @@ const productSchema = new mongoose.Schema({
 const Product = mongoose.model('Product', productSchema, "products");
 
 module.exports = Product;
-
-const small = new Product({size: 'small'});
-await small.save();
