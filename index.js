@@ -5,7 +5,9 @@ const database = require("./config/database");
 
 database.connect();
 
-const route = require("./routes/client/index.route");
+
+const routeAdmin = require("./routes/admin/index.route")
+const routeClient = require("./routes/client/index.route");
 
 const app = express();
 const port = process.env.PORT;
@@ -17,14 +19,12 @@ app.set("view engine", "pug")
 
 app.use(express.static("public"));
 
-// app.get('/', (req, res) => {
-//   res.render("client/pages/home/index"); 
-// })
 
-// app.get('/products', (req, res) => {
-//   res.render("client/pages/products/index");
-// })
-route(app);
+//Routes
+routeClient(app);
+routeAdmin(app);
+
+
 
 app.listen(port, () => {
   console.log(`App listening on ${port} : http://localhost:3000/ `)
